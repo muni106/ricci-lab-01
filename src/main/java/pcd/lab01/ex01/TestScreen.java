@@ -19,15 +19,15 @@ public class TestScreen {
 		Screen screen = Screen.getInstance();
 		screen.clear();
 		
-		var x0 = 1;
-		var y0 = 10;
+		var x0 = 10;
+		var y0 = 1;
 		
 		for (int i = 1; i < 80; i++) {					
-			screen.writeStringAt(y0, x0 + i, Color.RED, "Hello");
+			screen.writeStringAt(y0, x0 + i, Color.RED, "This is a simple sentence with words ready to fall");
 			try {
 				Thread.sleep(100);
 			} catch (Exception ex) {}
-			screen.writeStringAt(y0, x0 + i, Color.BLACK, "Hello");
+			screen.writeStringAt(y0, x0 + i, Color.WHITE, "Hello");
 		}
 	}
 

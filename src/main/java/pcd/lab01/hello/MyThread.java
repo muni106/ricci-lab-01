@@ -10,7 +10,9 @@ public class MyThread extends Thread {
 		log("Hello concurrent world!");
 		log("Sleeping for 5 secs...");
 		try {
+			// os isolate the thread in a queue where it doesn't use machine resources
 			Thread.sleep(5000);
+			// os move thread in ready queue
 		} catch (InterruptedException ex) {
 			ex.printStackTrace();
 		}
