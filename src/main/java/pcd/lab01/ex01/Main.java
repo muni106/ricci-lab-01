@@ -17,19 +17,11 @@ public class Main {
 
         Screen screen = Screen.getInstance();
         screen.clear();
-
-        var x0 = 10;
-        var y0 = 1;
-
-        for (int i = 1; i < 80; i++) {
-            for (var wp: wordList) {
-                screen.writeStringAt(y0 + i, wp.pos(), Color.RED, wp.word());
-
-            }
-            try {
-                Thread.sleep(100);
-            } catch (Exception ex) {}
-            screen.writeStringAt(y0, x0 + i, Color.WHITE, "Hello");
+        int i = 1;
+        for (var wp: wordList) {
+            Thread t = new WordThread(screen, wp.pos(), wp.word(), i * 50);
+            i = i + 1;
+            t.start();
         }
     }
 }
